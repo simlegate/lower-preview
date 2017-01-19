@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery iPreview Sample 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <input type='file' id="test" name="name" value="xxxxxx" >
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="../jquery.lowerPreview.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#test").lowerPreview({
+        unsupportedExtMessage: "unsupportedExtMessage",
+        onUnsupportedExt: function(){
+          alert("onUnsupportedExt");
+        },
+        onLoad: function(origin, image){
+          $("body").append(image);
+        }
+      });
+    })
+  </script>
+</body>
+</html>
